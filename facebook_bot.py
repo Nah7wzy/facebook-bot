@@ -97,6 +97,8 @@ class FacebookBot:
                     prev_date = "March 22 at 10:11 AM"
                     if clean_link != prev_date:
                         return True
+                    else:
+                        False
 
         else:
             self.login()
