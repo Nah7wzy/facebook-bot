@@ -8,12 +8,20 @@ OPTIONS.headless = False  # set to True to run browser headless
 OPTIONS.add_argument("window-size=1366,768")
 
 
-bot = FacebookBot(email="se.nahom.tamru@gmail.com", password="123field45", options=OPTIONS)
+bot = FacebookBot(
+    email="", password="", options=OPTIONS
+)
 s = sched.scheduler(time.time, time.sleep)
+
+first = True
 
 
 def check_for_post(sc):
-    bot.login()
+    global first
+    if first:
+        bot.login()
+        first = False
+
     if bot.check_new_post(page_id="100087292879019"):
         print("New Post!!!!!!!!!!!!!!!")
     else:

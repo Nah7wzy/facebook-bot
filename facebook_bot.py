@@ -92,13 +92,15 @@ class FacebookBot:
             )
 
             for link in post_date:
+
                 clean_link = link.text.strip()
                 if clean_link and self.__check_if_latest_post(date=clean_link):
                     prev_date = "March 22 at 10:11 AM"
                     if clean_link != prev_date:
+
                         return True
                     else:
-                        False
+                        return False
 
         else:
             self.login()
