@@ -73,9 +73,7 @@ class FacebookBot:
         regx_pattern = r"[a-zA-Z]+\s[0-9]+\sat\s[0-9]+:[0-9]+\s[AMPM]+"
         match = re.search(pattern=regx_pattern, string=date)
 
-        prev_date = "March 22 at 10:11 AM"
-
-        if match and match[0] != prev_date:
+        if match:
             return True
 
         return False
@@ -96,7 +94,9 @@ class FacebookBot:
             for link in post_date:
                 clean_link = link.text.strip()
                 if clean_link and self.__check_if_latest_post(date=clean_link):
-                    return True
+                    prev_date = "March 22 at 10:11 AM"
+                    if clean_link != prev_date:
+                        return True
 
         else:
             self.login()
