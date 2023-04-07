@@ -8,7 +8,7 @@ OPTIONS.headless = False  # set to True to run browser headless
 OPTIONS.add_argument("window-size=1366,768")
 
 
-bot = FacebookBot("", "", options=OPTIONS)
+bot = FacebookBot(email="", password="", options=OPTIONS)
 s = sched.scheduler(time.time, time.sleep)
 
 
@@ -19,7 +19,7 @@ def check_for_post(sc):
     else:
         print("No post yet, Retrying in 30min")
 
-    sc.enter(1800, 1, check_for_post, (sc,))
+    sc.enter(600, 1, check_for_post, (sc,))
 
 
 s.enter(0, 1, check_for_post, (s,))

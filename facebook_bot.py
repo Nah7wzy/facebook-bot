@@ -19,6 +19,7 @@ LOGGER.setLevel(logging.ERROR)
 # TODO better pattern match
 # TODO check post content
 # TODO better error handling
+# TODO make date dynamic
 
 
 class FacebookBot:
@@ -72,7 +73,7 @@ class FacebookBot:
         regx_pattern = r"[a-zA-Z]+\s[0-9]+\sat\s[0-9]+:[0-9]+\s[AMPM]+"
         match = re.search(pattern=regx_pattern, string=date)
 
-        prev_date = "March 20 at 2:31 PM"
+        prev_date = "March 22 at 10:11 AM"
 
         if match and match[0] != prev_date:
             return True
