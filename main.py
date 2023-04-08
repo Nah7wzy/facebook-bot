@@ -9,7 +9,7 @@ OPTIONS.add_argument("window-size=1366,768")
 
 
 bot = FacebookBot(
-    email="", password="", options=OPTIONS
+    email="se.nahom.tamru@gmail.com", password="123field45", options=OPTIONS
 )
 s = sched.scheduler(time.time, time.sleep)
 

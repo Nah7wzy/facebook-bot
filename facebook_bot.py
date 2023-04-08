@@ -70,7 +70,8 @@ class FacebookBot:
             print(e)
 
     def __check_if_latest_post(self, date: str):
-        regx_pattern = r"[a-zA-Z]+\s[0-9]+\sat\s[0-9]+:[0-9]+\s[AMPM]+"
+        # regx_pattern = r"[a-zA-Z]+\s[0-9]+\sat\s[0-9]+:[0-9]+\s[AMPM]+"
+        regx_pattern = r"[0-9]+m"
         match = re.search(pattern=regx_pattern, string=date)
 
         if match:
